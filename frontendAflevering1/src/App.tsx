@@ -1,5 +1,6 @@
 import './App.css'
-import item from './assets/items.json'
+import items from './assets/items.json'
+import { useState } from 'react'
 
 interface item {
   id: string,
@@ -8,23 +9,73 @@ interface item {
   currency: string,
   rebateQuantity: number,
   rebatePercent: number,
-  upsellProductId: null
+  upsellProductId: string | null
 }
 
-function product(itemName: string) {
-  const productItem = <div className="vare">
-                        <p>{itemName}</p>
-                      </div>
-  return <div className='products'> {productItem} </div>
-}
-
-function productList() {
-
-  const productItemList = (item as item[]).map((item: item) => product(item.name))
-  return <ul>{productItemList}</ul>
+interface cartItem {
+  id: string,
+  name: string,
+  price: number,
+  quantity: number
 }
 
 function App() {
+  let cartItems = [] as cartItem[]
+
+  for (let i = 0; i < items.length; i++) {
+    const itemID = items[i].id
+    const itemName = items[i].name
+    const itemPrice = items[i].price
+
+    const item: cartItem = {
+      id: itemID,
+      name: itemName,
+      price: itemPrice,
+      quantity: 1
+    };
+
+    (cartItems).push(item)
+  }
+
+  const [cartItemsList, setcartItemsList] = useState(cartItems)
+
+  function handleQuantityChange(updatedItem: cartItem) {
+
+    const newCardItems = cartItemsList.map((item) => {
+      if (item.id === updatedItem.id) {
+        return {...item, quantity: item.quantity + 1}
+      } else {
+        return item
+      }
+    })
+
+    setcartItemsList(newCardItems)
+    return
+  }
+  
+  function product(item: cartItem) {
+    const productItem = <div id={item.id} className="product" onClick={() => handleQuantityChange(item)}>
+                          <p>{item.name} | Pris {item.price}kr. | {item.quantity} stk. | Beløb {item.price * item.quantity}kr.</p>
+                        </div>
+    return productItem
+  }
+
+  function productList() {
+    const productItemList = cartItemsList.map((item: cartItem) => product(item))
+
+    let total = 0
+
+    for (let i = 0; i < cartItemsList.length; i++) {
+      total+=cartItemsList[i].price*cartItemsList[i].quantity
+    }
+
+    return <div className='products'>
+      <ul>{productItemList}</ul>
+      <p>I alt. {total}kr.</p>
+    </div>
+  
+  }
+
   return (
     <>
 
