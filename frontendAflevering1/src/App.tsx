@@ -56,6 +56,10 @@ function App() {
 
       <h1>Indkøbskurv</h1>
 
+      <div class="vare">
+      <p>ewtwewe</p>
+      </div>
+
       </>
   )
 }
