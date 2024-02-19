@@ -1,33 +1,66 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div style={{float: "left", width: "25%"}}>
+        <h1>Kunde information</h1>
+
+
+        <section> 
+          <div>
+            <label htmlFor="Navn">Navn:</label>
+            <input type="text" id="Navn" name="Navn" placeholder=""/>
+          </div>
+
+          <div>
+            <label htmlFor="Efternavn">Efternavn:</label>
+            <input type="text" id="Efternavn" name="Efternavn" placeholder=""/>
+          </div>
+        </section>
+
+        
+        <section>
+          <div>
+            <label htmlFor="Adresse">Adresse:</label>
+            <input type="text" id="Adresse" name="Adresse" placeholder=""/>
+          </div>
+
+          <div>
+            <label htmlFor="By">By:</label>
+            <input type="text" id="By" name="By" placeholder=""/>
+          </div>
+        </section>
+
+        
+        <section>
+          <div>
+            <label htmlFor="PostNummer">Post nummer:</label>
+            <input type="text" id="PostNummer" name="PostNummer" placeholder=""/>
+          </div>
+
+          <div>
+            <label htmlFor="Mail">Mail:</label>
+            <input type="text" id="Mail" name="Mail" placeholder=""/>
+          </div>
+        </section>
+
+        
+        <input type="checkbox" id="pakke1" name="pakke1" value="Post Nord"/>
+        <label htmlFor="pakke1">Post Nord</label>
+        <input type="checkbox" id="pakke2" name="pakke2" value="DAO"/>
+        <label htmlFor="pakke2">DAO</label>
+        <input type="checkbox" id="pakke3" name="pakke3" value="GLS"/>
+        <label htmlFor="pakke3">GLS</label>
+
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+
+      
+      <div style={{float: "right", width: "70%"}}>
+
+      <h1>Indkøbskurv</h1>
+
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
