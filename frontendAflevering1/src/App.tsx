@@ -1,4 +1,28 @@
 import './App.css'
+import item from './assets/items.json'
+
+interface item {
+  id: string,
+  name: string,
+  price: number,
+  currency: string,
+  rebateQuantity: number,
+  rebatePercent: number,
+  upsellProductId: null
+}
+
+function product(itemName: string) {
+  const productItem = <div className="vare">
+                        <p>{itemName}</p>
+                      </div>
+  return <div className='products'> {productItem} </div>
+}
+
+function productList() {
+
+  const productItemList = (item as item[]).map((item: item) => product(item.name))
+  return <ul>{productItemList}</ul>
+}
 
 function App() {
   return (
@@ -56,9 +80,7 @@ function App() {
 
       <h1>Indkøbskurv</h1>
 
-      <div class="vare">
-      <p>ewtwewe</p>
-      </div>
+      {productList()}
 
       </>
   )

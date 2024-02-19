@@ -68,7 +68,7 @@ button:focus-visible {
   .vare {
     background-color: lightgrey;
     height: 35px;
-    border: 20px solid green
+    border: 20px solid green;
     margin: 10px;
   }
 
