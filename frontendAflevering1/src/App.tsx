@@ -3,7 +3,7 @@ import './App.css'
 function App() {
   return (
     <>
-      <div style={{float: "left", width: "25%"}}>
+
         <h1>Kunde information</h1>
 
 
@@ -52,16 +52,11 @@ function App() {
         <label htmlFor="pakke2">DAO</label>
         <input type="checkbox" id="pakke3" name="pakke3" value="GLS"/>
         <label htmlFor="pakke3">GLS</label>
-
-      </div>
-
       
-      <div style={{float: "right", width: "70%"}}>
 
       <h1>Indkøbskurv</h1>
 
-      </div>
-    </>
+      </>
   )
 }
 
