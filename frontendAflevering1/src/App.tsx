@@ -51,12 +51,21 @@ function App() {
   }
   
   function product(item: cartItem) {
-    const productItem = <div key={item.id} id={item.id} className="product">
+    
+    let productItem = <div key={item.id} id={item.id} className="product">
                           <p>{item.name} | Pris {item.price}kr. | </p>  
                           <input type='number' id='itemQuantity' name='itemQuantity' defaultValue={1} min={0} width={1} onInput={(input) => input.currentTarget.validity.valid||(input.currentTarget.value='')} onChange={(input) => handleQuantityChange(item, input)}></input>
                           <p> stk. | Beløb {item.price * item.quantity}kr.</p>
                           <img src={redx} alt="Red X" onClick={() => deleteItem(item)}></img>
                         </div>
+    if(item.quantity>=5){
+      productItem = <div key={item.id} id={item.id} className="product">
+                          <p>{item.name} | Pris {item.price}kr. | </p>  
+                          <input type='number' id='itemQuantity' name='itemQuantity' defaultValue={1} min={0} width={1} onInput={(input) => input.currentTarget.validity.valid||(input.currentTarget.value='')} onChange={(input) => handleQuantityChange(item, input)}></input>
+                          <p> stk. | Beløb {(item.price * item.quantity)*0.9}kr.</p>
+                          <img src={redx} alt="Red X" onClick={() => deleteItem(item)}></img>
+                        </div>
+    }
     return productItem
   }
 
