@@ -52,13 +52,19 @@ function App() {
     setcartItemsList(newCardItems)
     return
   }
+
+  function deleteItem(item: cartItem) {
+    const newCartItemsList = cartItemsList.filter(x => x.id !== item.id)
+
+    setcartItemsList(newCartItemsList)
+  }
   
   function product(item: cartItem) {
     const productItem = <div key={item.id} id={item.id} className="product">
                           <p>{item.name} | Pris {item.price}kr. | </p>  
                           <input type='number' id='itemQuantity' name='itemQuantity' defaultValue={1} min={0} width={1} onInput={(input) => input.currentTarget.validity.valid||(input.currentTarget.value='')} onChange={(input) => handleQuantityChange(item, input)}></input>
                           <p> stk. | Beløb {item.price * item.quantity}kr.</p>
-                          <img src="./src/assets/redx.png" alt="Red X"></img>
+                          <img src="./src/assets/redx.png" alt="Red X" onClick={() => deleteItem(item)}></img>
                         </div>
     return productItem
   }
