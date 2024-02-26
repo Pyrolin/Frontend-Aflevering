@@ -39,11 +39,11 @@ function App() {
 
   const [cartItemsList, setcartItemsList] = useState(cartItems)
 
-  function handleQuantityChange(updatedItem: cartItem) {
+  function handleQuantityChange(updatedItem: cartItem, newValue: String) {
 
     const newCardItems = cartItemsList.map((item) => {
       if (item.id === updatedItem.id) {
-        return {...item, quantity: item.quantity + 1}
+        return {...item, quantity: Number(newValue)}
       } else {
         return item
       }
@@ -54,8 +54,10 @@ function App() {
   }
   
   function product(item: cartItem) {
-    const productItem = <div id={item.id} className="product" onClick={() => handleQuantityChange(item)}>
-                          <p>{item.name} | Pris {item.price}kr. | {item.quantity} stk. | Beløb {item.price * item.quantity}kr.</p>
+    const productItem = <div key={item.id} id={item.id} className="product">
+                          <p>{item.name} | Pris {item.price}kr. | </p>
+                          <input type='number' id='itemQuantity' name='itemQuantity' min={0} value={item.quantity} onChange={(input) => handleQuantityChange(item, input.currentTarget.value)}></input>
+                          <p> stk. | Beløb {item.price * item.quantity}kr.</p>
                         </div>
     return productItem
   }
