@@ -1,16 +1,7 @@
 import './App.css'
 import items from './assets/items.json'
+import redx from './assets/redx.png'
 import { useState } from 'react'
-
-interface item {
-  id: string,
-  name: string,
-  price: number,
-  currency: string,
-  rebateQuantity: number,
-  rebatePercent: number,
-  upsellProductId: string | null
-}
 
 interface cartItem {
   id: string,
@@ -56,7 +47,7 @@ function App() {
   function deleteItem(item: cartItem) {
     const newCartItemsList = cartItemsList.filter(x => x.id !== item.id)
 
-    setcartItemsList(newCartItemsList)
+    setcartItemsList(newCartItemsList)  
   }
   
   function product(item: cartItem) {
@@ -64,7 +55,7 @@ function App() {
                           <p>{item.name} | Pris {item.price}kr. | </p>  
                           <input type='number' id='itemQuantity' name='itemQuantity' defaultValue={1} min={0} width={1} onInput={(input) => input.currentTarget.validity.valid||(input.currentTarget.value='')} onChange={(input) => handleQuantityChange(item, input)}></input>
                           <p> stk. | Beløb {item.price * item.quantity}kr.</p>
-                          <img src="./src/assets/redx.png" alt="Red X" onClick={() => deleteItem(item)}></img>
+                          <img src={redx} alt="Red X" onClick={() => deleteItem(item)}></img>
                         </div>
     return productItem
   }
