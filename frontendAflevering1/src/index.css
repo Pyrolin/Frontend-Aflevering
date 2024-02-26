@@ -67,10 +67,19 @@ button:focus-visible {
 
   .product {
     background-color: lightgrey;
-    height: 50px;
+    height: 180px;
     width: auto;
     border: 5px solid lightblue;
     margin: 10px;
+  }
+
+  img {
+    height: 25px;
+    width: 25px;
+  }
+
+  .product input {
+    width: 3em;
   }
 
 }

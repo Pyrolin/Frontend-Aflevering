@@ -58,6 +58,7 @@ function App() {
                           <p>{item.name} | Pris {item.price}kr. | </p>
                           <input type='number' id='itemQuantity' name='itemQuantity' min={0} value={item.quantity} onChange={(input) => handleQuantityChange(item, input.currentTarget.value)}></input>
                           <p> stk. | Beløb {item.price * item.quantity}kr.</p>
+                          <img src="./src/assets/redx.png" alt="Red X"></img>
                         </div>
     return productItem
   }
@@ -73,7 +74,7 @@ function App() {
 
     return <div className='products'>
       <ul>{productItemList}</ul>
-      <p>I alt. {total}kr.</p>
+      <p3>I alt. {total}kr.</p3>
     </div>
   
   }
