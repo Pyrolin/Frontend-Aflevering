@@ -39,11 +39,11 @@ function App() {
 
   const [cartItemsList, setcartItemsList] = useState(cartItems)
 
-  function handleQuantityChange(updatedItem: cartItem, newValue: String) {
+  function handleQuantityChange(updatedItem: cartItem, newValue: React.ChangeEvent<HTMLInputElement>) {
 
     const newCardItems = cartItemsList.map((item) => {
       if (item.id === updatedItem.id) {
-        return {...item, quantity: Number(newValue)}
+        return {...item, quantity: Number(newValue.currentTarget.value)}
       } else {
         return item
       }
@@ -55,8 +55,8 @@ function App() {
   
   function product(item: cartItem) {
     const productItem = <div key={item.id} id={item.id} className="product">
-                          <p>{item.name} | Pris {item.price}kr. | </p>
-                          <input type='number' id='itemQuantity' name='itemQuantity' min={0} value={item.quantity} onChange={(input) => handleQuantityChange(item, input.currentTarget.value)}></input>
+                          <p>{item.name} | Pris {item.price}kr. | </p>  
+                          <input type='number' id='itemQuantity' name='itemQuantity' defaultValue={1} min={0} width={1} onInput={(input) => input.currentTarget.validity.valid||(input.currentTarget.value='')} onChange={(input) => handleQuantityChange(item, input)}></input>
                           <p> stk. | Beløb {item.price * item.quantity}kr.</p>
                           <img src="./src/assets/redx.png" alt="Red X"></img>
                         </div>
