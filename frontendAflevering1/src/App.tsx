@@ -74,7 +74,7 @@ function App() {
 
     return <div className='products'>
       <ul>{productItemList}</ul>
-      <p3>I alt. {total}kr.</p3>
+      <p>I alt. {total}kr.</p>
     </div>
   
   }
