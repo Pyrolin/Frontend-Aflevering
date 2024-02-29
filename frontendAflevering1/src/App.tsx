@@ -84,7 +84,9 @@ function App() {
     for (let i = 0; i < cartItemsList.length; i++) {
       total+=cartItemsList[i].totalPrice
     }
-
+    if (cartItemsList.length == 0){
+      return <p>Din kurv er tom</p>
+    }
     if (total > 300) {
       const prevTotal = total
       total = total * 0.9
