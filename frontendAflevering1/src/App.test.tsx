@@ -1,0 +1,11 @@
+import { render, screen } from "@testing-library/react";
+import { describe, expect, it, } from "vitest";
+import '@testing-library/jest-dom'
+import App from "./App";
+
+describe(App.name, () => {
+    it("should render", () => {
+      render(<App />);
+      expect(screen.getByLabelText("Navn:")).toBeInTheDocument();
+    });
+  });
