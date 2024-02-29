@@ -29,7 +29,7 @@ function App() {
 
     (cartItems).push(item)
   }
-
+  
   const [cartItemsList, setcartItemsList] = useState(cartItems)
 
   function handleQuantityChange(updatedItem: cartItem, newValue: React.ChangeEvent<HTMLInputElement>) {
@@ -109,32 +109,34 @@ function App() {
 
       <form action="/my-handling-form-page" method="post">
   <ul>
-    <li>
-      <label htmlFor="country">Land:</label>
-      <input type="bogstaver" id="land" name="bruger_land" />
-    </li>
+    <label htmlFor="country">
+      <span>Country:</span>
+    </label>
+    <select id="country" name="usercountry">
+    <option value="danmark">Danmark</option>
+    </select>
     <li>
       <label htmlFor="zip">Zip kode:</label>
       <input type="tal" id="zip" name="bruger_zip" />
     </li>
     <li>
-      <label htmlFor="adresse1">Adresse 1</label>
+      <label htmlFor="adresse1">Adresse 1:</label>
       <input type="bogstaver" id="adresse1" name="bruger_adresse1" />
     </li>
     <li>
-      <label htmlFor="adresse2">Adresse 2</label>
+      <label htmlFor="adresse2">Adresse 2:</label>
       <input type="bogstaver" id="adresse2" name="bruger_adresse2" />
     </li>
     <li>
-      <label htmlFor="navn">Navn</label>
+      <label htmlFor="navn">Navn:</label>
       <input type="bogstaver" id="adresse1" name="bruger_adresse1" />
     </li>
     <li>
-      <label htmlFor="telefon">Telefonnummer:</label>
+      <label htmlFor="telefon">Telefon nummer:</label>
       <input type="tal" id="nummer" name="bruger_nummer" />
     </li>
     <li>
-      <label htmlFor="mail">Email</label>
+      <label htmlFor="mail">Email:</label>
       <input type="bogstaver" id="land" name="bruger_land" />
     </li>
     <li>
