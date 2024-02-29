@@ -110,39 +110,39 @@ function App() {
       <form action="/my-handling-form-page" method="post">
   <ul>
     <li>
-      <label for="country">Land:</label>
+      <label htmlFor="country">Land:</label>
       <input type="bogstaver" id="land" name="bruger_land" />
     </li>
     <li>
-      <label for="zip">Zip kode:</label>
+      <label htmlFor="zip">Zip kode:</label>
       <input type="tal" id="zip" name="bruger_zip" />
     </li>
     <li>
-      <label for="adresse1">Adresse 1</label>
+      <label htmlFor="adresse1">Adresse 1</label>
       <input type="bogstaver" id="adresse1" name="bruger_adresse1" />
     </li>
     <li>
-      <label for="adresse2">Adresse 2</label>
+      <label htmlFor="adresse2">Adresse 2</label>
       <input type="bogstaver" id="adresse2" name="bruger_adresse2" />
     </li>
     <li>
-      <label for="navn">Navn</label>
+      <label htmlFor="navn">Navn</label>
       <input type="bogstaver" id="adresse1" name="bruger_adresse1" />
     </li>
     <li>
-      <label for="telefon">Telefonnummer:</label>
+      <label htmlFor="telefon">Telefonnummer:</label>
       <input type="tal" id="nummer" name="bruger_nummer" />
     </li>
     <li>
-      <label for="mail">Email</label>
+      <label htmlFor="mail">Email</label>
       <input type="bogstaver" id="land" name="bruger_land" />
     </li>
     <li>
-      <label for="firma">(Optionel) Firma navn:</label>
+      <label htmlFor="firma">(Optionel) Firma navn:</label>
       <input type="bogstaver" id="land" name="bruger_land" />
     </li>
     <li>
-      <label for="vat">(Optionel) Firma VAT:</label>
+      <label htmlFor="vat">(Optionel) Firma VAT:</label>
       <input type="tal" id="land" name="bruger_land" />
     </li>
   </ul>
