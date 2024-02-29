@@ -89,7 +89,6 @@ input[type="radio"] {
 
 input:focus,
 textarea:focus {
-  border-color: #000;
 }
 
 textarea {
