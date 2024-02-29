@@ -131,7 +131,7 @@ function App() {
     </li>
     <li>
       <label htmlFor="navn">Navn:</label>
-      <input type="bogstaver" id="adresse1" name="bruger_adresse1" />
+      <input type="bogstaver" id="navn" name="bruger_navn" />
     </li>
     <li>
       <label htmlFor="telefon">Telefon nummer:</label>
