@@ -79,55 +79,55 @@ function App() {
   return (
     <>
 
-        <h1>Kunde information</h1>
+      <h1>Kunde information</h1>
+
+      <form action="/my-handling-form-page" method="post">
+  <ul>
+    <li>
+      <label for="country">Land:</label>
+      <input type="bogstaver" id="land" name="bruger_land" />
+    </li>
+    <li>
+      <label for="zip">Zip kode:</label>
+      <input type="tal" id="zip" name="bruger_zip" />
+    </li>
+    <li>
+      <label for="adresse1">Adresse 1</label>
+      <input type="bogstaver" id="adresse1" name="bruger_adresse1" />
+    </li>
+    <li>
+      <label for="adresse2">Adresse 2</label>
+      <input type="bogstaver" id="adresse2" name="bruger_adresse2" />
+    </li>
+    <li>
+      <label for="navn">Navn</label>
+      <input type="bogstaver" id="adresse1" name="bruger_adresse1" />
+    </li>
+    <li>
+      <label for="telefon">Telefonnummer:</label>
+      <input type="tal" id="nummer" name="bruger_nummer" />
+    </li>
+    <li>
+      <label for="mail">Email</label>
+      <input type="bogstaver" id="land" name="bruger_land" />
+    </li>
+    <li>
+      <label for="firma">(Optionel) Firma navn:</label>
+      <input type="bogstaver" id="land" name="bruger_land" />
+    </li>
+    <li>
+      <label for="vat">(Optionel) Firma VAT:</label>
+      <input type="tal" id="land" name="bruger_land" />
+    </li>
+  </ul>
+</form>
 
 
-        <section> 
-          <div>
-            <label htmlFor="Navn">Navn:</label>
-            <input type="text" id="Navn" name="Navn" placeholder=""/>
-          </div>
 
-          <div>
-            <label htmlFor="Efternavn">Efternavn:</label>
-            <input type="text" id="Efternavn" name="Efternavn" placeholder=""/>
-          </div>
-        </section>
 
-        
-        <section>
-          <div>
-            <label htmlFor="Adresse">Adresse:</label>
-            <input type="text" id="Adresse" name="Adresse" placeholder=""/>
-          </div>
 
-          <div>
-            <label htmlFor="By">By:</label>
-            <input type="text" id="By" name="By" placeholder=""/>
-          </div>
-        </section>
 
-        
-        <section>
-          <div>
-            <label htmlFor="PostNummer">Post nummer:</label>
-            <input type="text" id="PostNummer" name="PostNummer" placeholder=""/>
-          </div>
 
-          <div>
-            <label htmlFor="Mail">Mail:</label>
-            <input type="text" id="Mail" name="Mail" placeholder=""/>
-          </div>
-        </section>
-
-        
-        <input type="checkbox" id="pakke1" name="pakke1" value="Post Nord"/>
-        <label htmlFor="pakke1">Post Nord</label>
-        <input type="checkbox" id="pakke2" name="pakke2" value="DAO"/>
-        <label htmlFor="pakke2">DAO</label>
-        <input type="checkbox" id="pakke3" name="pakke3" value="GLS"/>
-        <label htmlFor="pakke3">GLS</label>
-      
 
       <h1>Indkøbskurv</h1>
 
