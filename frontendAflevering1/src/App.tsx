@@ -187,11 +187,11 @@ function verifyEmail(input: React.ChangeEvent<HTMLInputElement>) {
       </select>
       <li>
       <label htmlFor="zip">Zip kode:</label>
-      <input type="number" id="zip" name="bruger_zip" value={city} onInput={(input) => input.currentTarget.validity.valid||(input.currentTarget.value='')} onChange={(input) => getZip(input)}/>
+      <input type="number" id="zip" name="bruger_zip" onInput={(input) => input.currentTarget.validity.valid||(input.currentTarget.value='')} onChange={(input) => getZip(input)}/>
       </li>
       <li>
       <label htmlFor="city">By</label>
-      <input type="bogstaver" id="city" name="bruger_city" onChange={(input) => setzipRef(input.currentTarget.value)}/>
+      <input type="bogstaver" id="city" name="bruger_city" value={city} onChange={(input) => setzipRef(input.currentTarget.value)}/>
       </li>
       <li>
       <label htmlFor="adresse1">Adresse 1:</label>
