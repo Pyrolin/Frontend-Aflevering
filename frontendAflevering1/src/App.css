@@ -89,6 +89,7 @@ input[type="radio"] {
 
 input:focus,
 textarea:focus {
+  border-color: #000;
 }
 
 textarea {
@@ -113,7 +114,7 @@ label {
 }
 
 p label {
-  display: block; /* Add this line */
+  display: block;
   width: 100%;
 }
 
@@ -122,4 +123,8 @@ label em {
   position: absolute;
   right: 5px;
   top: 20px;
+}
+
+h3 {
+  color: red;
 }

@@ -234,6 +234,8 @@ function verifyEmail(input: React.ChangeEvent<HTMLInputElement>) {
 
       <h1>Indkøbskurv</h1>
 
+      <h3>UDSALG: Køb 5 af samme varer og få 10% rabat på dem alle!</h3>
+
       {productList()}
 
       </>
