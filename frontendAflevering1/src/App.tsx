@@ -7,6 +7,7 @@ interface cartItem {
   id: string,
   name: string,
   price: number,
+  totalPrice: number,
   quantity: number
 }
 
@@ -22,6 +23,7 @@ function App() {
       id: itemID,
       name: itemName,
       price: itemPrice,
+      totalPrice: itemPrice,
       quantity: 1
     };
 
@@ -32,9 +34,11 @@ function App() {
 
   function handleQuantityChange(updatedItem: cartItem, newValue: React.ChangeEvent<HTMLInputElement>) {
 
+    const newTotalPrice = (Number(newValue.currentTarget.value) >= 5) ? updatedItem.price * Number(newValue.currentTarget.value) * 0.9 : updatedItem.price * Number(newValue.currentTarget.value)
+
     const newCardItems = cartItemsList.map((item) => {
       if (item.id === updatedItem.id) {
-        return {...item, quantity: Number(newValue.currentTarget.value)}
+        return {...item, quantity: Number(newValue.currentTarget.value), totalPrice: newTotalPrice}
       } else {
         return item
       }
@@ -51,12 +55,24 @@ function App() {
   }
   
   function product(item: cartItem) {
-    const productItem = <div key={item.id} id={item.id} className="product">
+
+    let totalPrice = item.price * item.quantity
+
+    let productItem = <div key={item.id} id={item.id} className="product">
                           <p>{item.name} | Pris {item.price}kr. | </p>  
                           <input type='number' id='itemQuantity' name='itemQuantity' defaultValue={1} min={0} width={1} onInput={(input) => input.currentTarget.validity.valid||(input.currentTarget.value='')} onChange={(input) => handleQuantityChange(item, input)}></input>
-                          <p> stk. | Beløb {item.price * item.quantity}kr.</p>
+                          <p> stk. | Beløb {totalPrice}kr.</p>
                           <img src={redx} alt="Red X" onClick={() => deleteItem(item)}></img>
                         </div>
+    if(item.quantity>=5){
+      totalPrice = totalPrice * 0.9
+      productItem = <div key={item.id} id={item.id} className="product">
+                          <p>{item.name} | Pris {item.price}kr. | </p>  
+                          <input type='number' id='itemQuantity' name='itemQuantity' defaultValue={1} min={0} width={1} onInput={(input) => input.currentTarget.validity.valid||(input.currentTarget.value='')} onChange={(input) => handleQuantityChange(item, input)}></input>
+                          <p> stk. | Beløb {totalPrice}kr. - 10% Rabat</p>
+                          <img src={redx} alt="Red X" onClick={() => deleteItem(item)}></img>
+                        </div>
+    }
     return productItem
   }
 
@@ -66,13 +82,23 @@ function App() {
     let total = 0
 
     for (let i = 0; i < cartItemsList.length; i++) {
-      total+=cartItemsList[i].price*cartItemsList[i].quantity
+      total+=cartItemsList[i].totalPrice
     }
 
-    return <div className='products'>
+    if (total > 300) {
+      const prevTotal = total
+      total = total * 0.9
+      return <div className='products'>
+      <ul>{productItemList}</ul>
+      <p>Samlet rabat -{prevTotal*0.1}kr.</p>
+      <p>I alt. {total}kr.</p>
+    </div>
+    } else {
+      return <div className='products'>
       <ul>{productItemList}</ul>
       <p>I alt. {total}kr.</p>
     </div>
+    }
   
   }
 
