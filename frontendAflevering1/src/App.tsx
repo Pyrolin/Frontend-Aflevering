@@ -174,8 +174,6 @@ function verifyEmail(input: React.ChangeEvent<HTMLInputElement>) {
 }
 
     return <>
-    <h1>Kunde information</h1>
-
     <form action="/my-handling-form-page" method="post">
       <ul>
       <label htmlFor="country">
@@ -230,6 +228,10 @@ function verifyEmail(input: React.ChangeEvent<HTMLInputElement>) {
   return (
     <>
 
+<h1>Leverings information</h1>
+      {addressForm()}
+
+<h1>Faktura information</h1>
       {addressForm()}
 
       <h1>Indkøbskurv</h1>
