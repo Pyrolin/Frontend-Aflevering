@@ -14,6 +14,7 @@ function App() {
       <h1>Indkøbskurv</h1>
 
       <h3>UDSALG: Køb 5 af samme varer og få 10% rabat på dem alle!</h3>
+      <h3>TIP: Du spare mere på dyrere varer!</h3>
 
       {products()}
     </>
