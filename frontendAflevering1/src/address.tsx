@@ -62,9 +62,9 @@ function verifyVAT(
 
 function verifyEmail(input: React.ChangeEvent<HTMLInputElement>) {
   if (!input.currentTarget.validity.valid) {
-    input.currentTarget.classList.add("number_error")
+    input.currentTarget.classList.add("email_error")
   } else {
-    input.currentTarget.classList.remove("number_error")
+    input.currentTarget.classList.remove("email_error")
   }
 }
 
@@ -125,7 +125,7 @@ function addressForm(
             <input type="bogstaver" id="adresse1" name="bruger_adresse1" />
           </li>
           <li>
-            <label htmlFor="telefon">Telefon nummer:</label>
+            <label htmlFor="nummer">Telefon nummer:</label>
             <input
               type="number"
               id="nummer"
@@ -138,7 +138,7 @@ function addressForm(
             />
           </li>
           <li>
-            <label htmlFor="email">Email:</label>
+            <label htmlFor="land">Email:</label>
             <input
               type="email"
               id="land"

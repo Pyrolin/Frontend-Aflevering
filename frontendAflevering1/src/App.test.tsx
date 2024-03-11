@@ -1,6 +1,4 @@
-
-
-import { render, screen,  } from "@testing-library/react";
+import { render, screen, } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, } from "vitest";
 import '@testing-library/jest-dom'
@@ -14,7 +12,7 @@ describe('App', () => {
     
     await userEvent.type(emailInput, "invalid-email");
     
-    expect(emailInput).toHaveClass("number_error");
+    expect(emailInput).toHaveClass("email_error");
       });
     it("should render", async () => {
       render(<App />);
